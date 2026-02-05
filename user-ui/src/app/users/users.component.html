@@ -1,0 +1,71 @@
+<div class="container">
+  <h2>User Management</h2>
+
+  <!-- FORM -->
+  <div class="form-box">
+    <input
+      type="text"
+      name="userName"
+      placeholder="Name"
+      [(ngModel)]="user.name" />
+
+    <input
+      type="text"
+      name="userContact"
+      placeholder="Contact"
+      [(ngModel)]="user.contact" />
+
+    <button type="button" (click)="saveUser()">
+      {{ isEditMode ? 'Update' : 'Save' }}
+    </button>
+
+    <button type="button" (click)="resetForm()">Clear</button>
+  </div>
+
+  <!-- DELETE ALL SELECTED -->
+  <button
+    type="button"
+    class="delete-all-btn"
+    (click)="deleteSelectedUsers()"
+    [disabled]="!hasSelectedUsers()">
+    Delete All Selected
+  </button>
+
+  <!-- TABLE -->
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>
+          <input
+            type="checkbox"
+            name="selectAll"
+            [(ngModel)]="selectedAll"
+            (change)="toggleSelectAll()" />
+        </th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>
+          <input
+            type="checkbox"
+            name="selected_{{u.id}}"
+            [(ngModel)]="u.selected"
+            (change)="checkIfAllSelected()" />
+        </td>
+        <td>{{ u.id }}</td>
+        <td>{{ u.name }}</td>
+        <td>{{ u.contact }}</td>
+        <td>
+          <button type="button" (click)="editUser(u)">Edit</button>
+          <button type="button" (click)="deleteUser(u.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,5 @@
+to go inside the folder
+cd user-ui
+
+to run the application
+ng serve
