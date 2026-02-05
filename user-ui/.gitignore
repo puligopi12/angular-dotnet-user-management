@@ -40,3 +40,41 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+
+# .NET
+bin/
+obj/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+appsettings.Development.json
+.env
+
+# =========================
+# ASP.NET Core / .NET
+# =========================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# ASP.NET secrets
+appsettings.Development.json
