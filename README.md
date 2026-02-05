@@ -59,3 +59,64 @@ Click Commit new file.
 
 ## 📂 Project Structure
 
+ProjectRoot
+├── Backend (ASP.NET Core API)
+├── user-ui (Angular Frontend)
+---
+
+## ⚙️ Backend Setup (ASP.NET Core API)
+
+1. Open Backend project in Visual Studio
+2. Update `appsettings.json` with SQL Server connection string
+3. Run migrations:
+
+
+Add-Migration Initial
+Update-Database
+
+4. Run the project
+5. Swagger will open at:
+
+
+http://localhost:5062/swagger
+
+---
+
+## ⚙️ Frontend Setup (Angular)
+
+1. Open `user-ui` folder in VS Code
+2. Install dependencies:
+
+
+npm install
+
+3. Run Angular app:
+
+ng serve
+
+4. Open browser:
+
+http://localhost:4200
+
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint |
+|------|---------|
+| GET | /api/Users/GetUsers |
+| POST | /api/Users/AddUser |
+| PUT | /api/Users/UpdateUser |
+| DELETE | /api/Users/DeleteUser/{id} |
+
+---
+
+## 💡 Key Learnings
+
+- Angular standalone components
+- Handling bulk operations in UI
+- REST API integration
+- CORS configuration
+- Clean architecture & separation of concerns
+
+This is a full-stack Angular and ASP.NET Core application where I implemented CRUD operations and bulk delete functionality using checkboxes. The frontend communicates with REST APIs and updates data dynamically without page refresh.
